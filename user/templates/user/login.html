@@ -1,0 +1,23 @@
+
+{% extends "design/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <fieldset class="vhod">
+                <legend class="textvhod">ВХОД</legend>
+                <div class="form-group">
+                    <label for="txt">Логин</label>
+                    <input type="text" id="txt" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="psw">Пароль</label>
+                    <input type="password" id="psw" name="password" required>
+                </div>
+            </fieldset>
+            <div class="knopka">
+                <button class="btn btn-outline-info" type="submit">Войти</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
